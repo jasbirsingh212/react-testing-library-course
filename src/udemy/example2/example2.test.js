@@ -42,4 +42,10 @@ describe('Testing Input', () =>  {
         const gettingInputByRole = screen.getByRole('textbox')
         expect(gettingInputByRole).toBeInTheDocument();
     })
+
+    test("get element by label text", () => {
+        renderApp();
+        const getElementByLabelText = screen.getByLabelText("test");
+        expect(getElementByLabelText).toBeInTheDocument();
+    })
 })

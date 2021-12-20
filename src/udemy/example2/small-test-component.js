@@ -11,7 +11,7 @@ const Input = ( ) => {
 
     return (
         <div>
-            <CustomInput value={text} onChange={onChange} label='test' />
+            <CustomInput value={text} onChange={onChange} label='test'  />
             <p> your entered text: {text}</p>
         </div>
     )
