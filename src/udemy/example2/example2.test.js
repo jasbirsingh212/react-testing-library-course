@@ -48,4 +48,11 @@ describe('Testing Input', () =>  {
         const getElementByLabelText = screen.getByLabelText("test");
         expect(getElementByLabelText).toBeInTheDocument();
     })
+
+    test("get by placeholder", () => {
+        renderApp();
+        const getByPlaceholder = screen.getByPlaceholderText('test');
+        expect(getByPlaceholder).toBeInTheDocument();
+
+    })
 })
