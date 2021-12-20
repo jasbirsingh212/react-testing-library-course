@@ -1,11 +1,15 @@
 import App from './../../App';
 import { render, screen} from '@testing-library/react';
 
+const renderApp = () => render(<App />);
+//beforeEach(() => renderApp()); ===> wrong use of render with beforeEach
+
 describe('Testing Input', () =>  {
 
     test('should have input', () => {
 
-        render(<App />)
+        renderApp()
+        //render(<App />);
         const input = screen.getByText('test')
         expect(input).toBeInTheDocument()
 
@@ -22,7 +26,9 @@ describe('Testing Input', () =>  {
 
     test("testing for custom input with label", () => {
 
-        render(<App />);
+        renderApp();
+//        render(<App />);
+
         const CustomInput = screen.getByText('test');
         const CustomInput1 = screen.getByText(/test/);
         const CustomInput2 = screen.getByText(/test/i)
