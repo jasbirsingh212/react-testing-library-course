@@ -36,4 +36,10 @@ describe('Testing Input', () =>  {
         expect(CustomInput1).toBeInTheDocument();
         expect(CustomInput2).toBeInTheDocument();
     })
+
+    test('get input by role', () => {
+        renderApp();
+        const gettingInputByRole = screen.getByRole('textbox')
+        expect(gettingInputByRole).toBeInTheDocument();
+    })
 })
