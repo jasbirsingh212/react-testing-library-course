@@ -19,4 +19,15 @@ describe('Testing Input', () =>  {
     //     //expect(input.value).toBeFalsy();
 
     // })
+
+    test("testing for custom input with label", () => {
+
+        render(<App />);
+        const CustomInput = screen.getByText('test');
+        const CustomInput1 = screen.getByText(/test/);
+        const CustomInput2 = screen.getByText(/test/i)
+        expect(CustomInput).toBeInTheDocument();
+        expect(CustomInput1).toBeInTheDocument();
+        expect(CustomInput2).toBeInTheDocument();
+    })
 })
