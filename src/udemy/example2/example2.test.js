@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/prefer-presence-queries */
 import App from './../../App';
 import { render, screen} from '@testing-library/react';
 
@@ -54,5 +55,25 @@ describe('Testing Input', () =>  {
         const getByPlaceholder = screen.getByPlaceholderText('test');
         expect(getByPlaceholder).toBeInTheDocument();
 
+    })
+})
+
+
+describe("testing with queryBy selector", () => {
+
+    test("get input by queryBy text", () => {
+        renderApp();
+        expect(screen.queryByText('test')).toBeInTheDocument();
+    })
+
+    test("should get null if element not found", () => {
+        renderApp();
+        expect(screen.queryByRole('whatever')).toBeNull();
+        //note : queryBy selector gives null if no element is found
+    })
+
+    test("should get by role with queryBy", () => {
+        renderApp();
+        expect(screen.queryByRole('textbox')).toBeDefined();
     })
 })
