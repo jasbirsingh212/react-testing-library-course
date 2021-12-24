@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Input from './udemy/example2/small-test-component';
 
